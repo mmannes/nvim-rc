@@ -61,7 +61,19 @@ return require('packer').startup(function(use)
     }
     use('lukas-reineke/indent-blankline.nvim')
 
-	-- git integration
-	use("lewis6991/gitsigns.nvim") -- show line modifications on left hand side
+	-- git integration show line modifications on left hand side
+    use {
+        'lewis6991/gitsigns.nvim',
+        config = function()
+            require('gitsigns').setup()
+        end
+    }
+
+    -- auto closing
+	use("windwp/nvim-autopairs") -- autoclose parens, brackets, quotes, etc...
+	use({ "windwp/nvim-ts-autotag", after = "nvim-treesitter" }) -- autoclose tags
+
+    -- Obsidian
+    use('kis9a/vimsidian')
 
 end)

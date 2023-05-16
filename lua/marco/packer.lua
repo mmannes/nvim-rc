@@ -76,4 +76,7 @@ return require('packer').startup(function(use)
     -- Obsidian
     use('kis9a/vimsidian')
 
+    -- Github Copilot
+    use('github/copilot.vim');
+
 end)

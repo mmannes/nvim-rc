@@ -23,6 +23,7 @@ vim.keymap.set("n", "<leader>Y", [["+Y]])
 vim.keymap.set({"n", "v"}, "<leader>d", [["_d]])
 
 vim.keymap.set("n", "Q", "<nop>")
+vim.keymap.set("n", "<leader>p", "<nop>")
 --vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")
 vim.keymap.set("n", "<leader>f", vim.lsp.buf.format)
 
@@ -41,3 +42,4 @@ vim.api.nvim_create_autocmd(
         command=[[nnoremap <buffer> <CR> <CR>:cclose<CR>]]
     }
 )
+

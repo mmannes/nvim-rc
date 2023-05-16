@@ -8,6 +8,7 @@ lsp.ensure_installed({
 	'sumneko_lua',
 	'rust_analyzer',
 	'intelephense',
+    'openscad_lsp',
 })
 
 local cmp = require('cmp')
@@ -21,8 +22,9 @@ local cmp_mappings = lsp.defaults.cmp_mappings({
 
 -- disable completion with tab
 -- this helps with copilot setup
--- cmp_mappings['<Tab>'] = nil
--- cmp_mappings['<S-Tab>'] = nil
+cmp_mappings['<Tab>'] = nil
+cmp_mappings['<S-Tab>'] = nil
+cmp_mappings['<CR>'] = nil
 
 lsp.setup_nvim_cmp({
 	mapping = cmp_mappings
@@ -78,6 +80,13 @@ lsp.configure('intelephense', {
 			},
 		},
 	}
+})
+
+lsp.configure('openscad_lsp', {
+    on_attach = function(client, bufnr)
+        print('Hello OpenScadian')
+    end,
+    settings = {}
 })
 
 lsp.setup()
